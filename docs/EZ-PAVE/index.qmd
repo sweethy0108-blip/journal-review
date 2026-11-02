@@ -1,105 +1,98 @@
-———
-
-  ## title: "Intensive LDL Cholesterol Targeting in ASCVD"
-  subtitle: "The Ez-PAVE Randomized Clinical Trial"
-  author: "이름"
-  format:
+---
+title: "Intensive LDL Cholesterol Targeting in ASCVD"
+subtitle: "The Ez-PAVE Randomized Clinical Trial"
+author: "이름"
+format:
   revealjs:
-  theme: simple
-  slide-number: true
-  transition: fade
+    theme: simple
+    slide-number: true
+    transition: fade
+---
 
-  ## Background
+## Background
 
-  - ASCVD 환자에서 LDL-C 감소는 이차 예방의 핵심이다.
-  - 최근 지침은 고위험 환자에게 LDL-C <55 mg/dL을 권고한다.
-  - 그러나 <55 mg/dL과 <70 mg/dL 목표를 직접 비교한 무작위 연구는 부족했다.
+- ASCVD 환자에서 LDL-C 감소는 이차 예방의 핵심이다.
+- 최근 지침은 고위험 환자에게 LDL-C <55 mg/dL을 권고한다.
+- 그러나 <55 mg/dL과 <70 mg/dL 목표를 직접 비교한 무작위 연구는 부족했다.
 
-  ———
+---
 
-  ## Research Question
+## Research Question
 
-  > ASCVD 환자에서 LDL-C <55 mg/dL을 목표로 하는 것이
-  > <70 mg/dL 목표보다 심혈관 사건을 더 많이 예방하는가?
+> ASCVD 환자에서 LDL-C <55 mg/dL을 목표로 하는 것이
+> <70 mg/dL 목표보다 심혈관 사건을 더 많이 예방하는가?
 
-  ———
+---
 
-  ## PICO
+## PICO
 
-   구분            내용
-  ━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   Population      ASCVD가 확인된 19–80세 환자
-  ──────────────  ─────────────────────────────
-   Intervention    LDL-C 목표 <55 mg/dL
-  ──────────────  ─────────────────────────────
-   Comparison      LDL-C 목표 <70 mg/dL
-  ──────────────  ─────────────────────────────
-   Outcome         주요 심혈관 사건
-  ──────────────  ─────────────────────────────
-   Follow-up       3년
+| 구분         | 내용                        |
+|--------------|-----------------------------|
+| Population   | ASCVD가 확인된 19–80세 환자 |
+| Intervention | LDL-C 목표 <55 mg/dL        |
+| Comparison   | LDL-C 목표 <70 mg/dL        |
+| Outcome      | 주요 심혈관 사건            |
+| Follow-up    | 3년                         |
 
-  ———
+---
 
-  ## Study Design
+## Study Design
 
-  - Multicenter randomized open-label superiority trial
-  - 대한민국 17개 기관
-  - 총 3,048명
-  - 1:1 무작위배정
-  - Intention-to-treat 분석
+- Multicenter randomized open-label superiority trial
+- 대한민국 17개 기관
+- 총 3,048명
+- 1:1 무작위배정
+- Intention-to-treat 분석
 
-  ———
+---
 
-  ## Primary Outcome
+## Primary Outcome
 
-   결과            Intensive    Conventional
-  ━━━━━━━━━━━━━━  ━━━━━━━━━━━  ━━━━━━━━━━━━━━
-   LDL-C 중앙값     56 mg/dL        66 mg/dL
-  ──────────────  ───────────  ──────────────
-   일차 결과            6.6%            9.7%
+| 결과          | Intensive | Conventional |
+|---------------|----------:|-------------:|
+| LDL-C 중앙값  |  56 mg/dL |     66 mg/dL |
+| 일차 결과     |      6.6% |         9.7% |
 
-  - HR 0.67
-  - 95% CI 0.52–0.86
-  - P=0.002
-  - ARR 약 3.1%p
-  - NNT 약 32
+- HR 0.67
+- 95% CI 0.52–0.86
+- P=0.002
+- ARR 약 3.1%p
+- NNT 약 32
 
-  ———
+---
 
-  ## Interpretation
+## Interpretation
 
-  - 집중 목표군에서 복합 심혈관 사건이 약 33% 감소했다.
-  - 절대위험은 약 3.1%p 감소했다.
-  - 주요 차이는 심근경색과 재혈관화 감소에서 나타났다.
-  - 사망률 감소가 입증된 것은 아니다.
+- 집중 목표군에서 복합 심혈관 사건이 약 33% 감소했다.
+- 절대위험은 약 3.1%p 감소했다.
+- 주요 차이는 심근경색과 재혈관화 감소에서 나타났다.
+- 사망률 감소가 입증된 것은 아니다.
 
-  ———
+---
 
-  ## Strengths
+## Strengths
 
-  - 두 LDL-C 목표를 직접 무작위 비교
-  - 국내 다기관 연구
-  - 추적 손실이 적음
-  - ITT 분석
-  - 실제 진료에 가까운 치료 조절 방식
+- 두 LDL-C 목표를 직접 무작위 비교
+- 국내 다기관 연구
+- 추적 손실이 적음
+- ITT 분석
+- 실제 진료에 가까운 치료 조절 방식
 
-  ———
+---
 
-  ## Limitations
+## Limitations
 
-  - 공개표지 연구
-  - 재혈관화 결정에 편향 가능성
-  - 모든 환자가 한국인
-  - 여성 참가자 비율이 낮음
-  - 집중군의 약 39%가 목표에 도달하지 못함
-  - 사망률 차이를 평가하기에는 사건 수가 적음
+- 공개표지 연구
+- 재혈관화 결정에 편향 가능성
+- 모든 환자가 한국인
+- 여성 참가자 비율이 낮음
+- 집중군의 약 39%가 목표에 도달하지 못함
+- 사망률 차이를 평가하기에는 사건 수가 적음
 
-  ———
+---
 
-  ## Conclusion
+## Conclusion
 
-  > ASCVD 환자에서 LDL-C <55 mg/dL 목표 전략은
-  > <70 mg/dL 전략보다 3년 심혈관 사건을 감소시켰으며,
-  > 뚜렷한 안전성 손실은 발견되지 않았다.
-
- 
+> ASCVD 환자에서 LDL-C <55 mg/dL 목표 전략은
+> <70 mg/dL 전략보다 3년 심혈관 사건을 감소시켰으며,
+> 뚜렷한 안전성 손실은 발견되지 않았다.
