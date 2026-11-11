@@ -293,9 +293,9 @@ HAYEON KOO
 <p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart TD
-  A["지역별 추정 병원 접근시간&lt;br/&gt;&lt;10분 · 10–30분 · 30–60분 · &gt;60분"]
+  A["지역별 추정 병원 접근시간&lt;br/&gt;&lt;10분, 10–30분, 30–60분, &gt;60분"]
   A --&gt; B["병원 내 사망"]
-  A --&gt; C["1년 및 최대 5년 all-cause mortality"]
+  A --&gt; C["1년 및 최대 5년 전체사망률"]
   B --&gt; D["Logistic regression"]
   D --&gt; E["Adjusted OR와 95% CI"]
   C --&gt; F["Kaplan–Meier curve"]
@@ -334,82 +334,163 @@ HAYEON KOO
 </div>
 </div>
 <ul>
-<li>다변수 모델은 나이, 성별, Charlson Comorbidity Index, 입원 연도 및 중환자 치료 변수를 보정</li>
 <li>모든 검정은 양측 <code>P &lt; 0.05</code>를 통계적 유의수준으로 적용</li>
 </ul>
+</section>
+<section id="multivariable-adjustment" class="slide level2">
+<h2>Multivariable adjustment</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">보정 이유</a></li><li><a href="#tabset-3-2">이 연구의 보정변수</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<ul>
+<li>접근시간이 긴 지역의 환자가 더 고령이고 중증도가 높다면 사망률 차이가 접근시간 때문인지 환자 특성 때문인지 구분하기 어려움</li>
+<li>여러 변수를 모델에 동시에 넣어 보정</li>
+</ul>
+</div>
+<div id="tabset-3-2">
+<ul>
+<li>나이</li>
+<li>성별</li>
+<li>Charlson Comorbidity Index</li>
+<li>입원 연도</li>
+<li>Multiple vasopressors</li>
+<li>CPR</li>
+<li>Mechanical ventilation</li>
+<li>IABP</li>
+<li>ECMO</li>
+<li>CRRT</li>
+</ul>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="results" class="title-slide slide level1">
 <h1>Results</h1>
 
 </section>
-<section id="baseline-characteristic" class="slide level2">
-<h2>Baseline characteristic</h2>
-<div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">요약</a></li><li><a href="#tabset-3-2">Table1</a></li></ul>
-<div class="tab-content">
-<div id="tabset-3-1">
+<section id="study-population" class="slide level2">
+<h2>Study Population</h2>
 <ul>
-<li>무작위 배정 없이 지역별 추정 접근시간에 따라 분류</li>
-<li>개인별 실제 이송시간이 아닌 지역 평균 주간 승용차 이동시간</li>
+<li>최종 분석 대상: <strong>80,263명</strong></li>
+<li>추정 병원 접근시간 중앙값: <strong>9.15분</strong> (IQR 7.31–12.85)</li>
 </ul>
-</div>
-<div id="tabset-3-2">
-<p><img src="CS_table1.png"></p>
-</div>
-</div>
-</div>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">추정 접근시간</th>
+<th style="text-align: right;">환자 수 (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">&lt;10분</td>
+<td style="text-align: right;">46,293 (57.7%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10–30분</td>
+<td style="text-align: right;">29,644 (36.9%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">30–60분</td>
+<td style="text-align: right;">3,422 (4.3%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&gt;60분</td>
+<td style="text-align: right;">904 (1.1%)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>접근시간이 긴 군에서 연령, 성별, 응급실 입원 및 일부 중환자 치료 변수의 SMD가 0.1 이상</li>
+</ul>
 </section>
-<section id="primary-outcome" class="slide level2">
-<h2>Primary Outcome</h2>
-<div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">LDL-C 및 일차 복합 결과</a></li><li><a href="#tabset-4-2">Figure1</a></li></ul>
-<div class="tab-content">
-<div id="tabset-4-1">
-
-</div>
-<div id="tabset-4-2">
-
-</div>
-</div>
-</div>
+<section id="primary-outcome-1-year-mortality" class="slide level2">
+<h2>Primary Outcome: 1-Year Mortality</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">추정 접근시간</th>
+<th style="text-align: right;">1년 사망률</th>
+<th style="text-align: right;">Adjusted HR (95% CI)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">&lt;10분</td>
+<td style="text-align: right;">41.4%</td>
+<td style="text-align: right;">Reference</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10–30분</td>
+<td style="text-align: right;">45.9%</td>
+<td style="text-align: right;">1.16 (1.14–1.19)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">30–60분</td>
+<td style="text-align: right;">47.9%</td>
+<td style="text-align: right;">1.16 (1.09–1.21)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&gt;60분</td>
+<td style="text-align: right;">52.9%</td>
+<td style="text-align: right;">1.31 (1.19–1.43)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Kaplan–Meier curve의 군 간 차이: log-rank <code>P &lt; 0.001</code></li>
+<li>다변수 Cox model에서도 접근시간이 긴 군에서 사망 hazard가 높게 나타남</li>
+</ul>
 </section>
-<section id="secondary-outcome" class="slide level2">
-<h2>Secondary outcome</h2>
-<div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">요약</a></li><li><a href="#tabset-5-2">Table2</a></li></ul>
-<div class="tab-content">
-<div id="tabset-5-1">
-
-</div>
-<div id="tabset-5-2">
-
-</div>
-</div>
-</div>
+<section id="in-hospital-mortality" class="slide level2">
+<h2>In-Hospital Mortality</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">추정 접근시간</th>
+<th style="text-align: right;">사망률</th>
+<th style="text-align: right;">Adjusted OR (95% CI)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">&lt;10분</td>
+<td style="text-align: right;">29.6%</td>
+<td style="text-align: right;">Reference</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10–30분</td>
+<td style="text-align: right;">33.5%</td>
+<td style="text-align: right;">1.27 (1.23–1.32)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">30–60분</td>
+<td style="text-align: right;">34.9%</td>
+<td style="text-align: right;">1.24 (1.14–1.35)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&gt;60분</td>
+<td style="text-align: right;">38.8%</td>
+<td style="text-align: right;">1.51 (1.29–1.75)</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:48%;">
+<p><img src="CS_figure1.png"></p>
+</div></div>
 </section>
-<section id="subgroup-analysis" class="slide level2">
-<h2>subgroup analysis</h2>
-<div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">요약</a></li><li><a href="#tabset-6-2">Figure2</a></li></ul>
-<div class="tab-content">
-<div id="tabset-6-1">
-
-</div>
-<div id="tabset-6-2">
-
-</div>
-</div>
-</div>
-</section>
-<section id="safety-endpoints" class="slide level2">
-<h2>Safety endpoints</h2>
-</section>
-<section id="safety-endpoints-1" class="slide level2">
-<h2>Safety endpoints</h2>
-</section>
-<section id="safety-endpoints-2" class="slide level2">
-<h2>Safety endpoints</h2>
+<section id="additional-analyses" class="slide level2">
+<h2>Additional Analyses</h2>
+<ul>
+<li>최대 5년 사망, <code>&gt;60분</code> vs.&nbsp;<code>&lt;10분</code>: adjusted HR <strong>1.33</strong> (95% CI 1.22–1.44)</li>
+<li>생존 퇴원자의 1년 사망, <code>&gt;60분</code> vs.&nbsp;<code>&lt;10분</code>: adjusted HR <strong>1.21</strong> (95% CI 1.01–1.44)</li>
+<li>Restricted cubic spline: 10–20분 부근에서는 plateau, 이후 증가하여 60분 이후 상승 폭이 커짐</li>
+<li>AMI 여부 및 shock chronicity에 따른 유의한 interaction은 관찰되지 않음</li>
+</ul>
 </section></section>
 <section>
 <section id="conclusion" class="title-slide slide level1">

@@ -117,9 +117,9 @@ format:
 
 ```{mermaid}
 flowchart TD
-  A["지역별 추정 병원 접근시간<br/><10분 · 10–30분 · 30–60분 · >60분"]
+  A["지역별 추정 병원 접근시간<br/><10분, 10–30분, 30–60분, >60분"]
   A --> B["병원 내 사망"]
-  A --> C["1년 및 최대 5년 all-cause mortality"]
+  A --> C["1년 및 최대 5년 전체사망률"]
   B --> D["Logistic regression"]
   D --> E["Adjusted OR와 95% CI"]
   C --> F["Kaplan–Meier curve"]
@@ -143,73 +143,87 @@ flowchart TD
 
   J["PH assumption"] --> K["Schoenfeld residuals<br/>Log-minus-log plot"]
 ```
-
-- 다변수 모델은 나이, 성별, Charlson Comorbidity Index, 입원 연도 및 중환자 치료 변수를 보정
 - 모든 검정은 양측 `P < 0.05`를 통계적 유의수준으로 적용
 
+
+## Multivariable adjustment
+
+::: panel-tabset
+
+### 보정 이유
+
+- 접근시간이 긴 지역의 환자가 더 고령이고 중증도가 높다면 사망률 차이가 접근시간 때문인지 환자 특성 때문인지 구분하기 어려움
+- 여러 변수를 모델에 동시에 넣어 보정
+
+### 이 연구의 보정변수
+
+  - 나이
+  - 성별
+  - Charlson Comorbidity Index
+  - 입원 연도
+  - Multiple vasopressors
+  - CPR
+  - Mechanical ventilation
+  - IABP
+  - ECMO
+  - CRRT
+  
+:::
+
 # Results
-## Baseline characteristic
 
-::: panel-tabset
+## Study Population
 
-### 요약
+- 최종 분석 대상: **80,263명**
+- 추정 병원 접근시간 중앙값: **9.15분** (IQR 7.31–12.85)
 
-- 무작위 배정 없이 지역별 추정 접근시간에 따라 분류
-- 개인별 실제 이송시간이 아닌 지역 평균 주간 승용차 이동시간
+| 추정 접근시간 | 환자 수 (%) |
+|:---|---:|
+| <10분 | 46,293 (57.7%) |
+| 10–30분 | 29,644 (36.9%) |
+| 30–60분 | 3,422 (4.3%) |
+| >60분 | 904 (1.1%) |
 
-### Table1
-<img src="CS_table1.png"/>
+- 접근시간이 긴 군에서 연령, 성별, 응급실 입원 및 일부 중환자 치료 변수의 SMD가 0.1 이상
 
+## Primary Outcome: 1-Year Mortality
 
+| 추정 접근시간 | 1년 사망률 | Adjusted HR (95% CI) |
+|:---|---:|---:|
+| <10분 | 41.4% | Reference |
+| 10–30분 | 45.9% | 1.16 (1.14–1.19) |
+| 30–60분 | 47.9% | 1.16 (1.09–1.21) |
+| >60분 | 52.9% | 1.31 (1.19–1.43) |
+
+- Kaplan–Meier curve의 군 간 차이: log-rank `P < 0.001`
+- 다변수 Cox model에서도 접근시간이 긴 군에서 사망 hazard가 높게 나타남
+
+## In-Hospital Mortality
+
+::: columns
+::: {.column width="52%"}
+
+| 추정 접근시간 | 사망률 | Adjusted OR (95% CI) |
+|:---|---:|---:|
+| <10분 | 29.6% | Reference |
+| 10–30분 | 33.5% | 1.27 (1.23–1.32) |
+| 30–60분 | 34.9% | 1.24 (1.14–1.35) |
+| >60분 | 38.8% | 1.51 (1.29–1.75) |
+
+::: 
+::: {.column width="48%"}
+
+<img src="CS_figure1.png"/>
+
+::: 
 :::
 
+## Additional Analyses
 
-## Primary Outcome
-
-
-::: panel-tabset
-### LDL-C 및 일차 복합 결과
-
-### Figure1
-
-
-
-:::
-
-## Secondary outcome
-
-
-::: panel-tabset
-
-### 요약
-
-### Table2
-
-
-:::
-
-## subgroup analysis
-
-
-::: panel-tabset
-
-### 요약
-
-### Figure2
-
-
-
-:::
-
-
-## Safety endpoints
-
-## Safety endpoints
-
-## Safety endpoints
-
-
-
+- 최대 5년 사망, `>60분` vs. `<10분`: adjusted HR **1.33** (95% CI 1.22–1.44)
+- 생존 퇴원자의 1년 사망, `>60분` vs. `<10분`: adjusted HR **1.21** (95% CI 1.01–1.44)
+- Restricted cubic spline: 10–20분 부근에서는 plateau, 이후 증가하여 60분 이후 상승 폭이 커짐
+- AMI 여부 및 shock chronicity에 따른 유의한 interaction은 관찰되지 않음
 
 # Conclusion
 
