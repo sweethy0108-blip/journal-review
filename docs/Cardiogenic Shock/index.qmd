@@ -1,0 +1,229 @@
+---
+title: "Geographic Access in Cardiogenic Shock"
+subtitle: "Does Delayed Access to Advanced Care Increase Mortality?"
+author: "HAYEON KOO"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    transition: fade
+    scrollable: true
+    center-title-slide: false
+    auto-stretch: false
+---
+
+
+## Glossary
+- **Cardiogenic Shock(CS)** : 심인성 쇼크, 심장의 펌프 기능이 급격히 저하되어 신체 각 조직과 장기로 충분한 혈액과 산소를 공급하지 못하는 치명적인 응급 상황
+- **Prehospital delay** : 응급 질환의 증상 발생부터 병원 응급실에 도착하기까지 걸리는 시간적 지연
+
+## Glossary
+- De novo : 새롭게
+- Acute-on-Chronic : 만성 질환이 갑작스러운 악화 요인에 의해 급격히 나빠진 상태
+- Prognosis : 예후
+
+
+## Background
+
+- CS는 심장기능 저하로 조직 관류가 감소하는 중증 응급질환으로, 30일 사망률이 50% ↑⇧
+- 비가역적 장기부전을 예방하고 생존율을 높이려면 신속하게 전문 치료를 시작해야 함
+- 기존 연구는 주로 재관류술과 기계적 순환보조 등 병원 내 치료 지연에 집중했다.
+- 병원 도착 전 접근시간의 지역 차이가 심인성 쇼크 환자의 사망률과 관련되는지는 충분히 연구되지 않았다.
+
+
+## Research Question
+
+>상급종합병원까지의 지역별 접근시간이 <br>
+>CS 환자들의 병원 내 및 장기 사망률과 연관이 있는가?
+
+
+# METHOD
+
+
+
+## PICO
+
+| 구분 | 요약 |
+|:---|:---|
+| Population | 2017–22년 3차 병원 ICU에 입원한 18세 이상 CS 환자 |
+| Exposure | 거주지역에서 3차 병원까지의 추정 접근시간 <br> (10–30분, 30–60분, >60분) |
+| Comparison | 추정 접근시간 <10분 |
+| Outcome | 1년 all-cause mortality; <br> 병원 내 사망 및 전체 추적기간 all-cause mortality |
+
+## Study Design
+
+- 한국국민건강보험공단(NHIS) 데이터베이스
+- 한국교통연구원의 지역 병원 접근성 지표
+
+
+
+## Patients
+
+::: panel-tabset
+
+### 포함기준
+
+- 2017–2022년 상급종합병원 ICU에 새로 입원한 18세 이상 환자
+- 병원 밖에서 발생한 cardiogenic shock
+- 진단코드와 치료내역을 조합한 claims-based definition 적용
+- 최종 분석 대상: 80,263명
+
+
+### 제외기준
+- Anaphylaxis
+- 이전 shock 병력(118,259명)
+- 거주지역과 입원 병원의 행정구역이 다른 환자
+
+
+
+:::
+
+
+## CS 진단 알고리즘 검증
+
+::: panel-tabset
+
+### 요약
+
+- 건강보험자료에는 CS를 임상적으로 확진할 정보 부족
+- 진단코드 + 치료내역 조합하여 CS 정의
+
+### 확인
+
+- 검증 대상 : 병원 기반 코호트 10,156명
+- 심장내과 전문의가 실제 CS로 판정한 환자: 2,104명, 22%
+- 민감도 : 0.89 (95% CI, 0.86–0.92)
+- 특이도 : 0.90 (95% CI, 0.88–0.93)
+
+:::
+
+## 병원 도착 시간 계산
+
+- 환자의 거주 행정구역 → 가장 가까운 3차 병원
+- **평균 주간 승용차 이동시간**으로 병원 접근시간을 추정 <br> by 인구 및 주택 조사, 국가 비즈니스 조사, 국가 교통 조사, 지리 정보 시스템 기반 도로망 지도 및 이동성 궤적 데이터
+
+## primary endpoint
+
+> 1년 추적 시 전체 사망률<br>
+> (중위 추적 기간이 1.3년이고 사망이 첫 해에 집중)
+
+## secondary endpoint
+
+> 전체 추적 기간(5년) 동안 병원 내 사망률과 전체 사망률
+
+
+
+## Statistical Analysis_1
+
+```{mermaid}
+flowchart TD
+  A["지역별 추정 병원 접근시간<br/><10분 · 10–30분 · 30–60분 · >60분"]
+  A --> B["병원 내 사망"]
+  A --> C["1년 및 최대 5년 all-cause mortality"]
+  B --> D["Logistic regression"]
+  D --> E["Adjusted OR와 95% CI"]
+  C --> F["Kaplan–Meier curve"]
+  F --> G["Log-rank test"]
+  C --> H["Cox proportional hazards model"]
+  H --> I["Adjusted HR와 95% CI"]
+```
+
+## Statistical Analysis_2
+
+```{mermaid}
+flowchart TD
+  A["연속형 접근시간"] --> B["Restricted cubic spline"]
+  B --> C["비선형 dose-response 평가"]
+
+  D["사전 정의된 임상 특성"] --> E["Subgroup analysis"]
+  E --> F["Interaction test"]
+
+  G["생존 퇴원 환자"] --> H["Cox regression"]
+  H --> I["퇴원 후 사망 분석"]
+
+  J["PH assumption"] --> K["Schoenfeld residuals<br/>Log-minus-log plot"]
+```
+
+- 다변수 모델은 나이, 성별, Charlson Comorbidity Index, 입원 연도 및 중환자 치료 변수를 보정
+- 모든 검정은 양측 `P < 0.05`를 통계적 유의수준으로 적용
+
+# Results
+## Baseline characteristic
+
+::: panel-tabset
+
+### 요약
+
+- 무작위 배정 없이 지역별 추정 접근시간에 따라 분류
+- 개인별 실제 이송시간이 아닌 지역 평균 주간 승용차 이동시간
+
+### Table1
+<img src="CS_table1.png"/>
+
+
+:::
+
+
+## Primary Outcome
+
+
+::: panel-tabset
+### LDL-C 및 일차 복합 결과
+
+### Figure1
+
+
+
+:::
+
+## Secondary outcome
+
+
+::: panel-tabset
+
+### 요약
+
+### Table2
+
+
+:::
+
+## subgroup analysis
+
+
+::: panel-tabset
+
+### 요약
+
+### Figure2
+
+
+
+:::
+
+
+## Safety endpoints
+
+## Safety endpoints
+
+## Safety endpoints
+
+
+
+
+# Conclusion
+
+
+## Strengths
+
+## Limitations
+
+
+## Conclusion
+
+>병원 도착 시간이 길어질수록 <br>
+>CS 환자에서 병원 내 및 장기 사망률 증가와 유의하게 연관
+
+- 시스템 수준의 전략을 통해 시기적절한 병원 접근성을 개선하는 것이 CS 환자의 생존율을 향상시키는 데 중요
+
+
