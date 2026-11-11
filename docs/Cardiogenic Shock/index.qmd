@@ -226,17 +226,39 @@ flowchart TD
 
 # Conclusion
 
-
 ## Strengths
 
-## Limitations
+- 전국 건강보험자료를 이용한 대규모 population-based cohort, `n = 80,263`
+- 별도의 병원 기반 코호트에서 claims-based CS 알고리즘 검증
+  - Sensitivity 0.89 (95% CI 0.86–0.92)
+  - Specificity 0.90 (95% CI 0.88–0.93)
+- 병원 내 사망, 1년 사망 및 최대 5년 사망을 함께 평가
+- 접근시간을 범주형 및 연속형 restricted cubic spline으로 분석
+- AMI 여부와 shock chronicity를 포함한 subgroup interaction analysis 시행
 
+## Limitations_1: Exposure Measurement
 
-## Conclusion
+- 개인별 실제 이송시간이 아닌 **거주지역 단위의 평균 접근시간** 사용
+- 표준화된 주간 승용차 이동시간으로 실제 EMS 이동, 교통상황 및 병원 경유를 반영하지 못함
+- 가장 가까운 상급종합병원까지의 추정시간과 실제 입원 병원까지의 이동시간이 다를 수 있음
+- 증상 발생, 신고, 현장 처치 및 병원 도착 시각을 확인할 수 없음
+- 결과는 개인별 prehospital delay보다 **지역의 상급종합병원 접근성**으로 해석해야 함
 
->병원 도착 시간이 길어질수록 <br>
->CS 환자에서 병원 내 및 장기 사망률 증가와 유의하게 연관
+## Limitations_2: Study Design and Analysis
 
-- 시스템 수준의 전략을 통해 시기적절한 병원 접근성을 개선하는 것이 CS 환자의 생존율을 향상시키는 데 중요
+- 거주지와 다른 행정구역의 병원에 입원한 환자 38,295명 (32.3%) 제외
+- 병원 도착 전 사망자는 포함되지 않아 selection bias 가능
+- Vital sign, lactate, cardiac output 및 SCAI shock stage 등 임상 중증도 정보 부재
+- 지역 및 병원 clustering을 고려한 분석이 제시되지 않음
+- 병원 규모, 치료량, EMS 자원 및 지역 특성에 대한 보정이 제한적
+- CPR, ECMO 등 접근 지연 이후 발생할 수 있는 변수를 보정해 overadjustment 가능
 
+## Take-Home Conclusion
 
+> 상급종합병원까지의 **지역 평균 접근시간이 긴 지역**에 거주한 심인성 쇼크 환자에서 병원 내 및 장기 사망이 높게 나타났다.
+
+- 60분 초과군의 병원 내 사망: adjusted OR 1.51 (95% CI 1.29–1.75)
+- 60분 초과군의 1년 사망: adjusted HR 1.31 (95% CI 1.19–1.43)
+- 실제 개인별 이송시간이 사망을 증가시켰다는 인과관계는 확인할 수 없음
+- 연구결과는 지역별 응급의료 접근성 차이를 보여주는 health-services evidence로 해석
+- 기사에서 제시한 “사망위험 1.5배”는 risk ratio가 아니라 병원 내 사망 odds ratio
