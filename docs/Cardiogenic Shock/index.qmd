@@ -91,7 +91,7 @@ format:
 ### 확인
 
 - 검증 대상 : 병원 기반 코호트 10,156명
-- 심장내과 전문의가 실제 CS로 판정한 환자: 2,104명, 22%
+- 실제 CS로 판정한 환자 2,104명(21%) 기준으로 알고리즘 검증
 - 민감도 : 0.89 (95% CI, 0.86–0.92)
 - 특이도 : 0.90 (95% CI, 0.88–0.93)
 
@@ -200,9 +200,9 @@ flowchart TD
 
 ## In-Hospital Mortality
 
-::: columns
-::: {.column width="52%"}
+::: panel-tabset
 
+### table
 | 추정 접근시간 | 사망률 | Adjusted OR (95% CI) |
 |:---|---:|---:|
 | <10분 | 29.6% | Reference |
@@ -210,19 +210,18 @@ flowchart TD
 | 30–60분 | 34.9% | 1.24 (1.14–1.35) |
 | >60분 | 38.8% | 1.51 (1.29–1.75) |
 
-::: 
-::: {.column width="48%"}
+### figure
 
 <img src="CS_figure1.png"/>
 
-::: 
+
 :::
 
 ## Additional Analyses
 
 - 최대 5년 사망, `>60분` vs. `<10분`: adjusted HR **1.33** (95% CI 1.22–1.44)
 - 생존 퇴원자의 1년 사망, `>60분` vs. `<10분`: adjusted HR **1.21** (95% CI 1.01–1.44)
-- Restricted cubic spline: 10–20분 부근에서는 plateau, 이후 증가하여 60분 이후 상승 폭이 커짐
+- Restricted cubic spline: 10–20분 부근에서는 큰 변화 x, 이후 증가하여 60분 이후 상승 폭이 커짐
 - AMI 여부 및 shock chronicity에 따른 유의한 interaction은 관찰되지 않음
 
 # Conclusion

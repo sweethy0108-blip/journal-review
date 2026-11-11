@@ -258,7 +258,7 @@ HAYEON KOO
 <div id="tabset-2-2">
 <ul>
 <li>검증 대상 : 병원 기반 코호트 10,156명</li>
-<li>심장내과 전문의가 실제 CS로 판정한 환자: 2,104명, 22%</li>
+<li>실제 CS로 판정한 환자 2,104명(21%) 기준으로 알고리즘 검증</li>
 <li>민감도 : 0.89 (95% CI, 0.86–0.92)</li>
 <li>특이도 : 0.90 (95% CI, 0.88–0.93)</li>
 </ul>
@@ -446,8 +446,10 @@ HAYEON KOO
 </section>
 <section id="in-hospital-mortality" class="slide level2">
 <h2>In-Hospital Mortality</h2>
-<div class="columns">
-<div class="column" style="width:52%;">
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">table</a></li><li><a href="#tabset-4-2">figure</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -479,9 +481,12 @@ HAYEON KOO
 </tr>
 </tbody>
 </table>
-</div><div class="column" style="width:48%;">
+</div>
+<div id="tabset-4-2">
 <p><img src="CS_figure1.png"></p>
-</div></div>
+</div>
+</div>
+</div>
 </section>
 <section id="additional-analyses" class="slide level2">
 <h2>Additional Analyses</h2>
@@ -499,17 +504,50 @@ HAYEON KOO
 </section>
 <section id="strengths" class="slide level2">
 <h2>Strengths</h2>
+<ul>
+<li>전국 건강보험자료를 이용한 대규모 population-based cohort, <code>n = 80,263</code></li>
+<li>별도의 병원 기반 코호트에서 claims-based CS 알고리즘 검증
+<ul>
+<li>Sensitivity 0.89 (95% CI 0.86–0.92)</li>
+<li>Specificity 0.90 (95% CI 0.88–0.93)</li>
+</ul></li>
+<li>병원 내 사망, 1년 사망 및 최대 5년 사망을 함께 평가</li>
+<li>접근시간을 범주형 및 연속형 restricted cubic spline으로 분석</li>
+<li>AMI 여부와 shock chronicity를 포함한 subgroup interaction analysis 시행</li>
+</ul>
 </section>
-<section id="limitations" class="slide level2">
-<h2>Limitations</h2>
+<section id="limitations_1-exposure-measurement" class="slide level2">
+<h2>Limitations_1: Exposure Measurement</h2>
+<ul>
+<li>개인별 실제 이송시간이 아닌 <strong>거주지역 단위의 평균 접근시간</strong> 사용</li>
+<li>표준화된 주간 승용차 이동시간으로 실제 EMS 이동, 교통상황 및 병원 경유를 반영하지 못함</li>
+<li>가장 가까운 상급종합병원까지의 추정시간과 실제 입원 병원까지의 이동시간이 다를 수 있음</li>
+<li>증상 발생, 신고, 현장 처치 및 병원 도착 시각을 확인할 수 없음</li>
+<li>결과는 개인별 prehospital delay보다 <strong>지역의 상급종합병원 접근성</strong>으로 해석해야 함</li>
+</ul>
 </section>
-<section id="conclusion-1" class="slide level2">
-<h2>Conclusion</h2>
+<section id="limitations_2-study-design-and-analysis" class="slide level2">
+<h2>Limitations_2: Study Design and Analysis</h2>
+<ul>
+<li>거주지와 다른 행정구역의 병원에 입원한 환자 38,295명 (32.3%) 제외</li>
+<li>병원 도착 전 사망자는 포함되지 않아 selection bias 가능</li>
+<li>Vital sign, lactate, cardiac output 및 SCAI shock stage 등 임상 중증도 정보 부재</li>
+<li>지역 및 병원 clustering을 고려한 분석이 제시되지 않음</li>
+<li>병원 규모, 치료량, EMS 자원 및 지역 특성에 대한 보정이 제한적</li>
+<li>CPR, ECMO 등 접근 지연 이후 발생할 수 있는 변수를 보정해 overadjustment 가능</li>
+</ul>
+</section>
+<section id="take-home-conclusion" class="slide level2">
+<h2>Take-Home Conclusion</h2>
 <blockquote>
-<p>병원 도착 시간이 길어질수록 <br> CS 환자에서 병원 내 및 장기 사망률 증가와 유의하게 연관</p>
+<p>상급종합병원까지의 <strong>지역 평균 접근시간이 긴 지역</strong>에 거주한 심인성 쇼크 환자에서 병원 내 및 장기 사망이 높게 나타났다.</p>
 </blockquote>
 <ul>
-<li>시스템 수준의 전략을 통해 시기적절한 병원 접근성을 개선하는 것이 CS 환자의 생존율을 향상시키는 데 중요</li>
+<li>60분 초과군의 병원 내 사망: adjusted OR 1.51 (95% CI 1.29–1.75)</li>
+<li>60분 초과군의 1년 사망: adjusted HR 1.31 (95% CI 1.19–1.43)</li>
+<li>실제 개인별 이송시간이 사망을 증가시켰다는 인과관계는 확인할 수 없음</li>
+<li>연구결과는 지역별 응급의료 접근성 차이를 보여주는 health-services evidence로 해석</li>
+<li>기사에서 제시한 “사망위험 1.5배”는 risk ratio가 아니라 병원 내 사망 odds ratio</li>
 </ul>
 
 </section></section>
