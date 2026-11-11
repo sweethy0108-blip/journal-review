@@ -133,7 +133,7 @@ flowchart TD
 ```{mermaid}
 flowchart TD
   A["연속형 접근시간"] --> B["Restricted cubic spline"]
-  B --> C["비선형 dose-response 평가"]
+  B --> C["비선형 관계 평가"]
 
   D["사전 정의된 임상 특성"] --> E["Subgroup analysis"]
   E --> F["Interaction test"]
