@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-fa12325b1158d5b04867e7c5933a45ff.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -197,11 +197,11 @@ HAYEON KOO
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Population</td>
-<td style="text-align: left;">2017–22년 3차 병원 ICU에 입원한 18세 이상 CS 환자</td>
+<td style="text-align: left;">2017–22년 상급종합병원 ICU에 입원한 18세 이상 CS 환자</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Exposure</td>
-<td style="text-align: left;">거주지역에서 3차 병원까지의 추정 접근시간 <br> (10–30분, 30–60분, &gt;60분)</td>
+<td style="text-align: left;">거주지역에서 상급종합병원까지의 추정 접근시간 <br> (10–30분, 30–60분, &gt;60분)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Comparison</td>
@@ -269,7 +269,7 @@ HAYEON KOO
 <section id="병원-도착-시간-계산" class="slide level2">
 <h2>병원 도착 시간 계산</h2>
 <ul>
-<li>환자의 거주 행정구역 → 가장 가까운 3차 병원</li>
+<li>환자의 거주 행정구역 → 가장 가까운 상급종합병원</li>
 <li><strong>평균 주간 승용차 이동시간</strong>으로 병원 접근시간을 추정 <br> by 인구 및 주택 조사, 국가 비즈니스 조사, 국가 교통 조사, 지리 정보 시스템 기반 도로망 지도 및 이동성 궤적 데이터</li>
 </ul>
 </section>
@@ -506,11 +506,7 @@ HAYEON KOO
 <h2>Strengths</h2>
 <ul>
 <li>전국 건강보험자료를 이용한 대규모 population-based cohort, <code>n = 80,263</code></li>
-<li>별도의 병원 기반 코호트에서 claims-based CS 알고리즘 검증
-<ul>
-<li>Sensitivity 0.89 (95% CI 0.86–0.92)</li>
-<li>Specificity 0.90 (95% CI 0.88–0.93)</li>
-</ul></li>
+<li>별도의 병원 기반 코호트에서 claims-based CS 알고리즘 검증</li>
 <li>병원 내 사망, 1년 사망 및 최대 5년 사망을 함께 평가</li>
 <li>접근시간을 범주형 및 연속형 restricted cubic spline으로 분석</li>
 <li>AMI 여부와 shock chronicity를 포함한 subgroup interaction analysis 시행</li>
@@ -530,11 +526,11 @@ HAYEON KOO
 <h2>Limitations_2: Study Design and Analysis</h2>
 <ul>
 <li>거주지와 다른 행정구역의 병원에 입원한 환자 38,295명 (32.3%) 제외</li>
-<li>병원 도착 전 사망자는 포함되지 않아 selection bias 가능</li>
+<li>병원 도착 전 사망자는 포함되지 않아 선택 편향 가능</li>
 <li>Vital sign, lactate, cardiac output 및 SCAI shock stage 등 임상 중증도 정보 부재</li>
 <li>지역 및 병원 clustering을 고려한 분석이 제시되지 않음</li>
 <li>병원 규모, 치료량, EMS 자원 및 지역 특성에 대한 보정이 제한적</li>
-<li>CPR, ECMO 등 접근 지연 이후 발생할 수 있는 변수를 보정해 overadjustment 가능</li>
+<li>CPR, ECMO 등 접근 지연 이후 발생할 수 있는 변수를 보정해 과잉조정 가능</li>
 </ul>
 </section>
 <section id="take-home-conclusion" class="slide level2">

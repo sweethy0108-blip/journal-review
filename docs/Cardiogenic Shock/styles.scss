@@ -1,0 +1,156 @@
+/*-- scss:defaults --*/
+$body-bg: #f7f4ef;
+$body-color: #172536;
+$link-color: #a92d3d;
+$presentation-heading-color: #102a43;
+$presentation-font-size-root: 34px;
+$font-family-sans-serif: "Noto Sans KR", "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+$presentation-heading-font: "Noto Sans KR", "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+$presentation-heading-font-weight: 700;
+$presentation-h1-font-size: 2.15em;
+$presentation-h2-font-size: 1.36em;
+$presentation-h3-font-size: 1.02em;
+$code-color: #8f2332;
+
+/*-- scss:rules --*/
+:root {
+  --cs-navy: #102a43;
+  --cs-navy-deep: #081b2c;
+  --cs-red: #a92d3d;
+  --cs-gold: #d2a74a;
+  --cs-paper: #f7f4ef;
+  --cs-muted: #607080;
+}
+
+.reveal {
+  background: radial-gradient(circle at 92% 8%, rgba(169, 45, 61, 0.09), transparent 26%),
+              linear-gradient(135deg, #fbfaf7 0%, var(--cs-paper) 100%);
+}
+
+.reveal .slides section { text-align: left; }
+
+.reveal .slides section.level1,
+.reveal #title-slide {
+  box-sizing: border-box;
+  padding: 1.2em 1.35em !important;
+  color: #f7f4ef;
+  background: linear-gradient(120deg, rgba(8, 27, 44, 0.98), rgba(16, 42, 67, 0.95));
+  border-left: 10px solid var(--cs-red);
+}
+
+.reveal .slides section.level1 h1,
+.reveal #title-slide h1,
+.reveal #title-slide .title {
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  max-width: 86%;
+}
+
+.reveal #title-slide .subtitle {
+  color: #e8c4c9;
+  font-weight: 500;
+  margin-top: 0.65em;
+}
+
+.reveal #title-slide .author {
+  color: #d9e2ec;
+  margin-top: 2.2em;
+  font-size: 0.72em;
+  letter-spacing: 0.1em;
+}
+
+.reveal h2 {
+  color: var(--cs-navy);
+  letter-spacing: -0.025em;
+  margin-bottom: 0.72em;
+}
+
+.reveal h2::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 5px;
+  margin-top: 0.24em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cs-red), var(--cs-gold));
+}
+
+.reveal h3 { color: var(--cs-red); letter-spacing: -0.01em; }
+.reveal p, .reveal li { line-height: 1.45; }
+.reveal ul li::marker { color: var(--cs-red); }
+.reveal strong { color: #8f2332; font-weight: 750; }
+
+.reveal blockquote {
+  width: auto;
+  margin: 0.8em 0;
+  padding: 0.7em 0.9em;
+  color: var(--cs-navy);
+  background: rgba(255, 255, 255, 0.76);
+  border: 0;
+  border-left: 7px solid var(--cs-red);
+  border-radius: 0 14px 14px 0;
+  box-shadow: 0 10px 28px rgba(16, 42, 67, 0.09);
+}
+
+.reveal table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(16, 42, 67, 0.14);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(16, 42, 67, 0.07);
+  font-size: 0.76em;
+}
+
+.reveal table thead th {
+  color: #ffffff;
+  background: var(--cs-navy);
+  border-bottom: 4px solid var(--cs-red);
+  padding: 0.55em 0.7em;
+}
+
+.reveal table tbody td {
+  padding: 0.46em 0.7em;
+  border-bottom: 1px solid rgba(16, 42, 67, 0.1);
+}
+
+.reveal table tbody tr:nth-child(even) { background: rgba(16, 42, 67, 0.045); }
+.reveal table tbody tr:last-child td { border-bottom: 0; }
+
+.reveal .panel-tabset .nav-tabs { border-bottom: 2px solid rgba(16, 42, 67, 0.14); }
+.reveal .panel-tabset .nav-link { color: var(--cs-muted); font-weight: 650; }
+.reveal .panel-tabset .nav-link.active {
+  color: var(--cs-red);
+  border-color: transparent transparent var(--cs-red);
+  border-bottom-width: 4px;
+  background: transparent;
+}
+
+.reveal pre.mermaid { padding: 0.35em; background: transparent; }
+.reveal .mermaid svg { max-height: 505px; }
+
+.reveal img {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(16, 42, 67, 0.14);
+}
+
+.reveal .slide-number {
+  right: 22px;
+  bottom: 18px;
+  color: #ffffff;
+  background: var(--cs-navy);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 13px;
+}
+
+.reveal .progress { height: 5px; color: var(--cs-red); }
+.reveal .controls { color: var(--cs-red); }
+
+@media (max-width: 900px) {
+  .reveal table { font-size: 0.68em; }
+  .reveal p, .reveal li { line-height: 1.35; }
+}

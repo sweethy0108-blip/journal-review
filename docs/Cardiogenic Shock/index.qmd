@@ -4,7 +4,7 @@ subtitle: "Does Delayed Access to Advanced Care Increase Mortality?"
 author: "HAYEON KOO"
 format:
   revealjs:
-    theme: simple
+    theme: [simple, styles.scss]
     slide-number: true
     transition: fade
     scrollable: true
@@ -45,8 +45,8 @@ format:
 
 | 구분 | 요약 |
 |:---|:---|
-| Population | 2017–22년 3차 병원 ICU에 입원한 18세 이상 CS 환자 |
-| Exposure | 거주지역에서 3차 병원까지의 추정 접근시간 <br> (10–30분, 30–60분, >60분) |
+| Population | 2017–22년 상급종합병원 ICU에 입원한 18세 이상 CS 환자 |
+| Exposure | 거주지역에서 상급종합병원까지의 추정 접근시간 <br> (10–30분, 30–60분, >60분) |
 | Comparison | 추정 접근시간 <10분 |
 | Outcome | 1년 all-cause mortality; <br> 병원 내 사망 및 전체 추적기간 all-cause mortality |
 
@@ -92,14 +92,14 @@ format:
 
 - 검증 대상 : 병원 기반 코호트 10,156명
 - 실제 CS로 판정한 환자 2,104명(21%) 기준으로 알고리즘 검증
-- 민감도 : 0.89 (95% CI, 0.86–0.92)
-- 특이도 : 0.90 (95% CI, 0.88–0.93)
+ - 민감도 : 0.89 (95% CI, 0.86–0.92)
+ - 특이도 : 0.90 (95% CI, 0.88–0.93)
 
 :::
 
 ## 병원 도착 시간 계산
 
-- 환자의 거주 행정구역 → 가장 가까운 3차 병원
+- 환자의 거주 행정구역 → 가장 가까운 상급종합병원
 - **평균 주간 승용차 이동시간**으로 병원 접근시간을 추정 <br> by 인구 및 주택 조사, 국가 비즈니스 조사, 국가 교통 조사, 지리 정보 시스템 기반 도로망 지도 및 이동성 궤적 데이터
 
 ## primary endpoint
@@ -230,8 +230,6 @@ flowchart TD
 
 - 전국 건강보험자료를 이용한 대규모 population-based cohort, `n = 80,263`
 - 별도의 병원 기반 코호트에서 claims-based CS 알고리즘 검증
-  - Sensitivity 0.89 (95% CI 0.86–0.92)
-  - Specificity 0.90 (95% CI 0.88–0.93)
 - 병원 내 사망, 1년 사망 및 최대 5년 사망을 함께 평가
 - 접근시간을 범주형 및 연속형 restricted cubic spline으로 분석
 - AMI 여부와 shock chronicity를 포함한 subgroup interaction analysis 시행
@@ -247,11 +245,11 @@ flowchart TD
 ## Limitations_2: Study Design and Analysis
 
 - 거주지와 다른 행정구역의 병원에 입원한 환자 38,295명 (32.3%) 제외
-- 병원 도착 전 사망자는 포함되지 않아 selection bias 가능
+- 병원 도착 전 사망자는 포함되지 않아 선택 편향 가능
 - Vital sign, lactate, cardiac output 및 SCAI shock stage 등 임상 중증도 정보 부재
 - 지역 및 병원 clustering을 고려한 분석이 제시되지 않음
 - 병원 규모, 치료량, EMS 자원 및 지역 특성에 대한 보정이 제한적
-- CPR, ECMO 등 접근 지연 이후 발생할 수 있는 변수를 보정해 overadjustment 가능
+- CPR, ECMO 등 접근 지연 이후 발생할 수 있는 변수를 보정해 과잉조정 가능
 
 ## Take-Home Conclusion
 
