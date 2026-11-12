@@ -1,156 +1,292 @@
 /*-- scss:defaults --*/
-$body-bg: #f7f4ef;
+$body-bg: #071521;
 $body-color: #172536;
-$link-color: #a92d3d;
+$link-color: #b42e45;
 $presentation-heading-color: #102a43;
-$presentation-font-size-root: 34px;
+$presentation-font-size-root: 32px;
 $font-family-sans-serif: "Noto Sans KR", "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
 $presentation-heading-font: "Noto Sans KR", "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
-$presentation-heading-font-weight: 700;
-$presentation-h1-font-size: 2.15em;
-$presentation-h2-font-size: 1.36em;
-$presentation-h3-font-size: 1.02em;
-$code-color: #8f2332;
+$presentation-heading-font-weight: 750;
+$presentation-h1-font-size: 2.25em;
+$presentation-h2-font-size: 1.34em;
+$presentation-h3-font-size: 0.98em;
 
 /*-- scss:rules --*/
 :root {
-  --cs-navy: #102a43;
-  --cs-navy-deep: #081b2c;
-  --cs-red: #a92d3d;
-  --cs-gold: #d2a74a;
-  --cs-paper: #f7f4ef;
-  --cs-muted: #607080;
+  --navy-950: #071521;
+  --navy-900: #0b2032;
+  --navy-800: #12324a;
+  --navy-700: #1b4866;
+  --red-600: #b42e45;
+  --red-400: #dc7181;
+  --gold-500: #d2a74a;
+  --paper: #fbfaf7;
+  --ink: #172536;
+  --muted: #647484;
 }
 
-.reveal {
-  background: radial-gradient(circle at 92% 8%, rgba(169, 45, 61, 0.09), transparent 26%),
-              linear-gradient(135deg, #fbfaf7 0%, var(--cs-paper) 100%);
+.reveal-viewport {
+  background:
+    radial-gradient(circle at 12% 14%, rgba(180, 46, 69, 0.28), transparent 24%),
+    radial-gradient(circle at 90% 86%, rgba(27, 72, 102, 0.72), transparent 32%),
+    var(--navy-950);
 }
 
-.reveal .slides section { text-align: left; }
+.reveal { color: var(--ink); }
+.reveal .slides { text-align: left; }
 
-.reveal .slides section.level1,
-.reveal #title-slide {
+/* White presentation card */
+.reveal .slides > section.slide.level2 {
   box-sizing: border-box;
-  padding: 1.2em 1.35em !important;
-  color: #f7f4ef;
-  background: linear-gradient(120deg, rgba(8, 27, 44, 0.98), rgba(16, 42, 67, 0.95));
-  border-left: 10px solid var(--cs-red);
+  width: calc(100% - 48px) !important;
+  height: calc(100% - 46px) !important;
+  margin: 23px 24px !important;
+  padding: 38px 48px 42px !important;
+  overflow-y: auto;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 96% 5%, rgba(180, 46, 69, 0.09), transparent 18%),
+    linear-gradient(145deg, #ffffff 0%, var(--paper) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
 }
 
-.reveal .slides section.level1 h1,
+.reveal .slides > section.slide.level2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 11px;
+  height: 100%;
+  border-radius: 24px 0 0 24px;
+  background: linear-gradient(180deg, var(--red-600), var(--gold-500));
+}
+
+/* Full-bleed title and section dividers */
+.reveal #title-slide,
+.reveal .slides > section.slide.level1 {
+  box-sizing: border-box;
+  width: calc(100% - 48px) !important;
+  height: calc(100% - 46px) !important;
+  margin: 23px 24px !important;
+  padding: 78px 76px !important;
+  overflow: hidden;
+  color: #f8fafc;
+  background:
+    radial-gradient(circle at 82% 20%, rgba(180, 46, 69, 0.82), transparent 25%),
+    linear-gradient(125deg, var(--navy-950) 0%, var(--navy-800) 78%, #6d2030 140%);
+  border-radius: 24px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.42);
+}
+
+.reveal #title-slide::before,
+.reveal .slides > section.slide.level1::before {
+  content: "";
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  right: -80px;
+  bottom: -110px;
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  box-shadow: 0 0 0 34px rgba(255, 255, 255, 0.05),
+              0 0 0 70px rgba(255, 255, 255, 0.025);
+}
+
+.reveal #title-slide::after,
+.reveal .slides > section.slide.level1::after {
+  content: "CARDIOGENIC SHOCK";
+  position: absolute;
+  right: 70px;
+  top: 54px;
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0.2em;
+}
+
 .reveal #title-slide h1,
-.reveal #title-slide .title {
+.reveal #title-slide .title,
+.reveal .slides > section.slide.level1 h1 {
+  position: relative;
+  z-index: 2;
+  max-width: 82%;
   color: #ffffff;
-  letter-spacing: -0.025em;
-  line-height: 1.08;
-  max-width: 86%;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+
+.reveal #title-slide .title::after {
+  content: "";
+  display: block;
+  width: 110px;
+  height: 7px;
+  margin-top: 24px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--red-400), var(--gold-500));
 }
 
 .reveal #title-slide .subtitle {
-  color: #e8c4c9;
-  font-weight: 500;
-  margin-top: 0.65em;
+  position: relative;
+  z-index: 2;
+  max-width: 72%;
+  margin-top: 28px;
+  color: #f3cbd1;
+  font-size: 0.86em;
+  font-weight: 520;
+  line-height: 1.35;
 }
 
 .reveal #title-slide .author {
+  position: absolute;
+  left: 78px;
+  bottom: 64px;
   color: #d9e2ec;
-  margin-top: 2.2em;
-  font-size: 0.72em;
-  letter-spacing: 0.1em;
+  font-size: 0.58em;
+  font-weight: 650;
+  letter-spacing: 0.15em;
 }
 
+/* Headings */
 .reveal h2 {
-  color: var(--cs-navy);
-  letter-spacing: -0.025em;
-  margin-bottom: 0.72em;
+  margin: 0 0 25px;
+  color: var(--navy-900);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
 }
 
 .reveal h2::after {
   content: "";
   display: block;
-  width: 72px;
-  height: 5px;
-  margin-top: 0.24em;
+  width: 76px;
+  height: 6px;
+  margin-top: 13px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--cs-red), var(--cs-gold));
+  background: linear-gradient(90deg, var(--red-600), var(--gold-500));
 }
 
-.reveal h3 { color: var(--cs-red); letter-spacing: -0.01em; }
-.reveal p, .reveal li { line-height: 1.45; }
-.reveal ul li::marker { color: var(--cs-red); }
-.reveal strong { color: #8f2332; font-weight: 750; }
+.reveal h3 {
+  color: var(--red-600);
+  letter-spacing: -0.015em;
+}
 
+.reveal p, .reveal li { line-height: 1.42; }
+.reveal ul { margin-left: 0.8em; }
+.reveal ul li { margin-bottom: 0.22em; padding-left: 0.12em; }
+.reveal ul li::marker { color: var(--red-600); }
+.reveal strong { color: #9d263b; font-weight: 780; }
+
+/* Quote card */
 .reveal blockquote {
   width: auto;
-  margin: 0.8em 0;
-  padding: 0.7em 0.9em;
-  color: var(--cs-navy);
-  background: rgba(255, 255, 255, 0.76);
+  margin: 22px 0;
+  padding: 22px 28px;
+  color: var(--navy-900);
+  background: linear-gradient(100deg, rgba(180, 46, 69, 0.1), rgba(210, 167, 74, 0.08));
   border: 0;
-  border-left: 7px solid var(--cs-red);
-  border-radius: 0 14px 14px 0;
-  box-shadow: 0 10px 28px rgba(16, 42, 67, 0.09);
+  border-left: 8px solid var(--red-600);
+  border-radius: 0 16px 16px 0;
+  box-shadow: 0 12px 28px rgba(16, 42, 67, 0.09);
+  font-style: normal;
+  font-weight: 630;
 }
 
+/* Publication-style tables */
 .reveal table {
   width: 100%;
+  margin: 16px 0 10px;
+  overflow: hidden;
   border-collapse: separate;
   border-spacing: 0;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.84);
-  border: 1px solid rgba(16, 42, 67, 0.14);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(16, 42, 67, 0.07);
-  font-size: 0.76em;
+  background: #ffffff;
+  border: 1px solid rgba(18, 50, 74, 0.13);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(16, 42, 67, 0.09);
+  font-size: 0.73em;
 }
 
 .reveal table thead th {
+  padding: 13px 15px;
   color: #ffffff;
-  background: var(--cs-navy);
-  border-bottom: 4px solid var(--cs-red);
-  padding: 0.55em 0.7em;
+  background: linear-gradient(100deg, var(--navy-900), var(--navy-700));
+  border: 0;
+  border-bottom: 5px solid var(--red-600);
+  font-weight: 720;
 }
 
 .reveal table tbody td {
-  padding: 0.46em 0.7em;
-  border-bottom: 1px solid rgba(16, 42, 67, 0.1);
+  padding: 11px 15px;
+  border: 0;
+  border-bottom: 1px solid rgba(18, 50, 74, 0.09);
 }
 
-.reveal table tbody tr:nth-child(even) { background: rgba(16, 42, 67, 0.045); }
+.reveal table tbody tr:nth-child(even) { background: #f0f4f7; }
 .reveal table tbody tr:last-child td { border-bottom: 0; }
+.reveal table tbody tr:hover { background: #f8ebee; }
 
-.reveal .panel-tabset .nav-tabs { border-bottom: 2px solid rgba(16, 42, 67, 0.14); }
-.reveal .panel-tabset .nav-link { color: var(--cs-muted); font-weight: 650; }
-.reveal .panel-tabset .nav-link.active {
-  color: var(--cs-red);
-  border-color: transparent transparent var(--cs-red);
-  border-bottom-width: 4px;
-  background: transparent;
+/* Pill tabs */
+.reveal .panel-tabset .nav-tabs {
+  gap: 10px;
+  margin-bottom: 18px;
+  border: 0;
 }
 
-.reveal pre.mermaid { padding: 0.35em; background: transparent; }
-.reveal .mermaid svg { max-height: 505px; }
+.reveal .panel-tabset .nav-link {
+  padding: 7px 17px;
+  color: var(--navy-700);
+  background: #e8eef2;
+  border: 0;
+  border-radius: 999px;
+  font-size: 0.76em;
+  font-weight: 700;
+}
+
+.reveal .panel-tabset .nav-link.active {
+  color: #ffffff;
+  background: linear-gradient(100deg, var(--red-600), #8f2337);
+  box-shadow: 0 7px 18px rgba(180, 46, 69, 0.24);
+}
+
+/* Diagrams */
+.reveal pre.mermaid {
+  margin: 0 auto;
+  padding: 12px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.reveal .mermaid svg { max-height: 480px; }
+.reveal .mermaid .node rect,
+.reveal .mermaid .node polygon,
+.reveal .mermaid .node path {
+  filter: drop-shadow(0 7px 9px rgba(16, 42, 67, 0.12));
+}
 
 .reveal img {
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(16, 42, 67, 0.14);
+  border: 1px solid rgba(18, 50, 74, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 16px 36px rgba(16, 42, 67, 0.17);
 }
 
+/* Navigation */
 .reveal .slide-number {
-  right: 22px;
-  bottom: 18px;
+  right: 34px;
+  bottom: 26px;
   color: #ffffff;
-  background: var(--cs-navy);
+  background: linear-gradient(100deg, var(--navy-800), var(--red-600));
   border-radius: 999px;
-  padding: 4px 10px;
+  padding: 5px 12px;
   font-size: 13px;
+  font-weight: 700;
 }
 
-.reveal .progress { height: 5px; color: var(--cs-red); }
-.reveal .controls { color: var(--cs-red); }
+.reveal .progress { height: 6px; color: var(--red-400); }
+.reveal .controls { color: var(--red-400); }
 
 @media (max-width: 900px) {
-  .reveal table { font-size: 0.68em; }
-  .reveal p, .reveal li { line-height: 1.35; }
+  .reveal .slides > section.slide.level2 { padding: 32px 38px !important; }
+  .reveal table { font-size: 0.66em; }
+  .reveal p, .reveal li { line-height: 1.34; }
 }
