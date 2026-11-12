@@ -36,7 +36,7 @@ $presentation-h3-font-size: 0.98em;
 .reveal .slides { text-align: left; }
 
 /* White presentation card */
-.reveal .slides > section.slide.level2 {
+.reveal .slides section.slide.level2 {
   box-sizing: border-box;
   width: calc(100% - 48px) !important;
   height: calc(100% - 46px) !important;
@@ -52,7 +52,7 @@ $presentation-h3-font-size: 0.98em;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
 }
 
-.reveal .slides > section.slide.level2::before {
+.reveal .slides section.slide.level2::before {
   content: "";
   position: absolute;
   top: 0;
@@ -65,7 +65,7 @@ $presentation-h3-font-size: 0.98em;
 
 /* Full-bleed title and section dividers */
 .reveal #title-slide,
-.reveal .slides > section.slide.level1 {
+.reveal .slides section.slide.level1 {
   box-sizing: border-box;
   width: calc(100% - 48px) !important;
   height: calc(100% - 46px) !important;
@@ -81,7 +81,7 @@ $presentation-h3-font-size: 0.98em;
 }
 
 .reveal #title-slide::before,
-.reveal .slides > section.slide.level1::before {
+.reveal .slides section.slide.level1::before {
   content: "";
   position: absolute;
   width: 290px;
@@ -95,7 +95,7 @@ $presentation-h3-font-size: 0.98em;
 }
 
 .reveal #title-slide::after,
-.reveal .slides > section.slide.level1::after {
+.reveal .slides section.slide.level1::after {
   content: "CARDIOGENIC SHOCK";
   position: absolute;
   right: 70px;
@@ -108,7 +108,7 @@ $presentation-h3-font-size: 0.98em;
 
 .reveal #title-slide h1,
 .reveal #title-slide .title,
-.reveal .slides > section.slide.level1 h1 {
+.reveal .slides section.slide.level1 h1 {
   position: relative;
   z-index: 2;
   max-width: 82%;
@@ -286,7 +286,7 @@ $presentation-h3-font-size: 0.98em;
 .reveal .controls { color: var(--red-400); }
 
 @media (max-width: 900px) {
-  .reveal .slides > section.slide.level2 { padding: 32px 38px !important; }
+  .reveal .slides section.slide.level2 { padding: 32px 38px !important; }
   .reveal table { font-size: 0.66em; }
   .reveal p, .reveal li { line-height: 1.34; }
 }
